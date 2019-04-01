@@ -1,0 +1,63 @@
+---
+title: "Conceptos Básicos"
+output: html_notebook
+---
+
+
+
+```{r genera-datos}
+set.seed(2345)
+pesoBebes<-rnorm(200,3.2,0.8)
+hist(pesoBebes)
+
+```
+
+El parámetro $\mu$ de la población es `r mean(pesoBebes)`
+
+```{r}
+
+muestraPesoBebes<-sample(pesoBebes,180,replace = TRUE)
+```
+
+El estadístico $\bar X$ de la población es `r mean(muestraPesoBebes)`
+
+## Percentiles. 
+
+Porcentaje de los valores de la muestra que están por debajo de ese dato concreto. 
+
+### Ejemplo
+
+¿Cuál es el percentil 35 del conjunto de datos que contiene los pesos de los bebés?
+
+```{r}
+pesoBebesOrdenados<-sort(pesoBebes)
+quantile(pesoBebes,.35)
+```
+Resumen de los 5 números
+```{r}
+summary(pesoBebes)
+```
+
+## Regla empírica
+
+Descripción de la proporción que se encuentran alrededor de la media medida en unidades de desviaciones etándar, siempre que la distribución de frecuencia sea aproximadamente simétrica.
+
+1. Aproximadamente el 68% de las observaciones quedan dentro de una desviación estándar de la media.
+2. Aproximadamente el 95% de las observaciones quedan a dos desviaciones estándar de la media.
+3. Aproximadamente el 99.7% de las observaciones quedan a tres desviaciones de la media.
+
+```{r}
+pesoBebesZ<-scale(pesoBebes)
+
+dfPesoBebes<-data.frame(pesoBebes,pesoBebesZ)
+
+kable(dfPesoBebes)
+
+```
+
+```{r}
+pnorm(-2.94)
+
+```
+
+

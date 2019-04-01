@@ -1,10 +1,17 @@
 #author: LAHA
 #date: 6/11/2018
 #function to plot a funtion of x
-plotAreaUC<-function(xfrom,xto,xby,xli,xls,f,colorAUC="gray",transpAUC=1){
+plotAreaUC<-function(xfrom,xto,xby,xli,xls,f,colorAUC="gray",transpAUC=1,normal=TRUE){
   library(ggplot2)
   x<-seq(xfrom,xto, xby)
-  y<- f(x) # dnorm(x,0,1)
+  if(normal){
+    y<-dnorm(x,0,1)  
+  }
+  else{
+    y<- f(x)
+  }
+  #y<-ifelse(normal,dnorm(x,0,1),f(x))
+  #y<- f(x) # dnorm(x,0,1)
   xddf <- data.frame(x=x,y=y)
 
   p<-ggplot(data=xddf,aes(x=x,y=y))+
@@ -20,16 +27,16 @@ plotAreaUC<-function(xfrom,xto,xby,xli,xls,f,colorAUC="gray",transpAUC=1){
 }
 
 
-xfrom<--6
-xto<-6
+xfrom<--3
+xto<-3
 xby<-.01
-xli<-2.5
-xls<-6
+xli<- 1.96
+xls<- 3.00
 f<- function(x) {x^3}
-colorAUC="green"
+colorAUC="darkblue"
 transpAUC=.5
 
-plotAreaUC(xfrom,xto,xby,xli,xls,f,colorAUC,transpAUC=transpAUC)
+plotAreaUC(xfrom,xto,xby,xli,xls,f,colorAUC,transpAUC=transpAUC,normal = TRUE)
 # 
 # 
 # 7*sin(x)+x^2-4

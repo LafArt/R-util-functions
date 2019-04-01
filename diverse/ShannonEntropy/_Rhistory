@@ -1,0 +1,374 @@
+user<-Sys.info()[7]
+user<-user[[1]]
+rutacode<-paste("C:/Users/",user,"/Google Drive/R-util-functions/diverse/ShannonEntropy/",sep = "")
+source(file=paste(rutacode,"oneVectorEntropy.R",sep = ""),encoding = "UTF8")
+source(file=paste(rutacode,"parcialVector.R",sep = ""),encoding = "UTF8")
+datos<-read.csv(file="C:/Users/artur/Google Drive/DAIH/Paper komputer sapiens/ejemplo-enf.csv",header = T,sep = ",")
+matrixRes<->matrix()
+matrixRes<-matrix()
+matrixRes
+predictive<-datos$Estornudos
+target<-datos$Enfermedad
+predictiveLeves<-table(predictive)
+df<-cbind.data.frame(p=predictive,t=target)
+matrixRes<-matrix(NA,nrow = iter,ncol = 3)
+for(i in 1:length(predictiveLeves)){
+#names(predictiveLeves)[i]
+enropyLevel<- round(oneVectorEntropy(parcialVector(names(predictiveLeves)[i],predictive,target)),digits = 3)
+weightLevel<-round(predictiveLeves[[i]]/length(target),digits = 3)
+matrixRes[i,]<-c(names(predictiveLeves)[1],entropyLevel,weightLevel)
+}
+dfRes<-data.frame(matrixRes)
+names(dfRes)<-c("nivel","entropia","peso")
+predictiveLeves<-table(predictive)
+df<-cbind.data.frame(p=predictive,t=target)
+matrixRes<-matrix(NA,nrow = length(predictiveLeves),ncol = 3)
+for(i in 1:length(predictiveLeves)){
+#names(predictiveLeves)[i]
+enropyLevel<- round(oneVectorEntropy(parcialVector(names(predictiveLeves)[i],predictive,target)),digits = 3)
+weightLevel<-round(predictiveLeves[[i]]/length(target),digits = 3)
+matrixRes[i,]<-c(names(predictiveLeves)[1],entropyLevel,weightLevel)
+}
+for(i in 1:length(predictiveLeves)){
+#names(predictiveLeves)[i]
+entropyLevel<- round(oneVectorEntropy(parcialVector(names(predictiveLeves)[i],predictive,target)),digits = 3)
+weightLevel<-round(predictiveLeves[[i]]/length(target),digits = 3)
+matrixRes[i,]<-c(names(predictiveLeves)[1],entropyLevel,weightLevel)
+}
+dfRes<-data.frame(matrixRes)
+names(dfRes)<-c("nivel","entropia","peso")
+dfRes
+names(predictiveLeves)[1]
+names(predictiveLeves)[2]
+length(predictiveLeves)
+predictive
+target
+i<-1
+entropyLevel<- round(oneVectorEntropy(parcialVector(names(predictiveLeves)[i],predictive,target)),digits = 3)
+entropyLevel
+parcialVector(names(predictiveLeves)[i],predictive,target))
+parcialVector(names(predictiveLeves)[i],predictive,target)
+parcialVector(names(predictiveLeves)[i],predictive,target)[[1]]
+parcialVector(names(predictiveLeves)[i],predictive,target)[1]
+c(parcialVector(names(predictiveLeves)[i],predictive,target))
+parcialVector(names(predictiveLeves)[i],predictive,target)
+entropyLevel<- round(oneVectorEntropy(c(parcialVector(names(predictiveLeves)[i],predictive,target))),digits = 3)
+entropyLevel
+weightLevel<-round(predictiveLeves[[i]]/length(target),digits = 3)
+matrixRes[i,]<-c(names(predictiveLeves)[1],entropyLevel,weightLevel)
+matrixRes
+i<-2
+entropyLevel<- round(oneVectorEntropy(c(parcialVector(names(predictiveLeves)[i],predictive,target))),digits = 3)
+weightLevel<-round(predictiveLeves[[i]]/length(target),digits = 3)
+matrixRes[i,]<-c(names(predictiveLeves)[1],entropyLevel,weightLevel)
+matrixRes[i,]
+parcialVector(names(predictiveLeves)[i],predictive,target)
+for(i in 1:length(predictiveLeves)){
+#names(predictiveLeves)[i]
+entropyLevel<- round(oneVectorEntropy(c(parcialVector(names(predictiveLeves)[i],predictive,target))),digits = 3)
+weightLevel<-round(predictiveLeves[[i]]/length(target),digits = 3)
+matrixRes[i,]<-c(names(predictiveLeves)[i],entropyLevel,weightLevel)
+}
+matrixRes[i,]
+matrixRes<-matrix(NA,nrow = length(predictiveLeves),ncol = 3)
+for(i in 1:length(predictiveLeves)){
+#names(predictiveLeves)[i]
+entropyLevel<- round(oneVectorEntropy(c(parcialVector(names(predictiveLeves)[i],predictive,target))),digits = 3)
+weightLevel<-round(predictiveLeves[[i]]/length(target),digits = 3)
+matrixRes[i,]<-c(names(predictiveLeves)[i],entropyLevel,weightLevel)
+}
+matrixRes
+dfRes<-cbind.data.frame(Nivel=factor(matrixRes[,1]),Entropia=numeric(matrixRes[,2]),Peso=numeric(matrixRes[,3]))
+factor(matrixRes[,1])
+matrixRes[,1]
+dfRes<-cbind.data.frame(Nivel=as.factor(matrixRes[,1]),Entropia=as.numeric(matrixRes[,2]),Peso=as.numeric(matrixRes[,3]))
+dfRes
+rutacode<-paste("C:/Users/",user,"/Google Drive/R-util-functions/diverse/ShannonEntropy/",sep = "")
+source(file=paste(rutacode,"entropyWeightOneVariable.R",sep = ""),encoding = "UTF8")
+dt<-datos
+rutacode<-paste("C:/Users/",user,"/Google Drive/R-util-functions/diverse/ShannonEntropy/",sep = "")
+source(file=paste(rutacode,"entropyWeightOneVariable.R",sep = ""),encoding = "UTF8")
+dt<-datos
+listDataFrames<-list()
+for(i in 1:ncol(dt)-1){
+listDataFrames[[i]]<-entropyWeightOneVariable(dt[i],dt[ncol(dt)])
+}
+i<-1
+listDataFrames[[i]]<-entropyWeightOneVariable(dt[i],dt[ncol(dt)])
+rutacode<-paste("C:/Users/",user,"/Google Drive/R-util-functions/diverse/ShannonEntropy/",sep = "")
+source(file=paste(rutacode,"entropyWeightOneVariable.R",sep = ""),encoding = "UTF8")
+dt<-datos
+listDataFrames<-list()
+i<-1
+listDataFrames[[i]]<-entropyWeightOneVariable(dt[i],dt[ncol(dt)])
+listDataFrames[[i]]<-entropyWeightOneVariable(dt[i],dt[ncol(dt)])
+listDataFrames[[i]]<-entropyWeightOneVariable(dt[i],dt[ncol(dt)])
+listDataFrames[[i]]<-entropyWeightOneVariable(dt[i],dt[ncol(dt)])
+listDataFrames[[i]]
+for(i in 1:ncol(dt)-1){
+listDataFrames[[i]]<-entropyWeightOneVariable(dt[i],dt[ncol(dt)])
+}
+i<-2
+listDataFrames[[i]]<-entropyWeightOneVariable(dt[i],dt[ncol(dt)])
+listDataFrames
+listDataFrames<-list()
+for(i in 1:(ncol(dt)-1)){
+listDataFrames[[i]]<-entropyWeightOneVariable(dt[i],dt[ncol(dt)])
+}
+listDataFrames
+apply(dfWE[,2:3],1,*)
+apply(dfWE[,2:3],1,prod)
+listDataFrames[[1]]
+x<-listDataFrames[[1]]
+apply(x[,2:3],1,prod)
+x
+sum(apply(x[,2:3],1,prod) )
+x<-listDataFrames[[8]]
+sum(apply(x[,2:3],1,prod))
+apply(x[,2:3],1,prod)
+1.352*9
+library(foreach)
+library('foreach')
+source(file=paste(rutacode,"remainderOneVariable.R",sep = ""),encoding = "UTF8")
+xx<-listDataFrames
+listdfWE<-xx
+foreach(lista in listdfWE){
+remainderVector<-c(remainderVector,remainderOneVariable(data.frame(lista))
+}
+?foreach
+for(lista in listdfWE){
+remainderVector<-c(remainderVector,remainderOneVariable(data.frame(lista[[lista]]))
+}
+for(lista in 1:length(listdfWE)){
+remainderVector<-c(remainderVector,remainderOneVariable(data.frame(lista[[lista]]))
+}
+for(lista in 1:length(listdfWE)){
+remainderVector<-c(remainderVector,remainderOneVariable(data.frame(listdfWE[[lista]]))
+}
+lista<-1
+remainderVector<-c(remainderVector,remainderOneVariable(data.frame(listdfWE[[lista]]))
+remainderVector<-c()
+remainderVector<-c()
+for(lista in 1:length(listdfWE)){
+remainderVector<-c(remainderVector,remainderOneVariable(data.frame(listdfWE[[lista]])))
+}
+remainderVector
+predictive<-datos$Estornudos
+target<-datos$Enfermedad
+predictiveLeves<-table(predictive)
+matrixRes<-matrix(NA,nrow = length(predictiveLeves),ncol = 3)
+for(i in 1:length(predictiveLeves)){
+#names(predictiveLeves)[i]
+entropyLevel<- round(oneVectorEntropy(c(parcialVector(names(predictiveLeves)[i],predictive,target))),digits = 3)
+weightLevel<-round(predictiveLeves[[i]]/length(target),digits = 3)
+matrixRes[i,]<-c(names(predictiveLeves)[i],entropyLevel,weightLevel)
+}
+matrixRes
+dfRes<-cbind.data.frame(Nivel=as.factor(matrixRes[,1]),Entropia=as.numeric(matrixRes[,2]),Peso=as.numeric(matrixRes[,3]))
+dfRes
+dt<-datos
+#testcode
+rutacode<-paste("C:/Users/",user,"/Google Drive/R-util-functions/diverse/ShannonEntropy/",sep = "")
+source(file=paste(rutacode,"entropyWeightOneVariable.R",sep = ""),encoding = "UTF8")
+listDataFrames<-list()
+for(i in 1:(ncol(dt)-1)){
+listDataFrames[[i]]<-entropyWeightOneVariable(dt[i],dt[ncol(dt)])
+}
+listDataFrames
+predictive<-datos$Estornudos
+target<-datos$Enfermedad
+for(i in 1:length(predictiveLeves)){
+#names(predictiveLeves)[i]
+entropyLevel<- round(oneVectorEntropy(c(parcialVector(names(predictiveLeves)[i],predictive,target))),digits = 3)
+weightLevel<-round(predictiveLeves[[i]]/length(target),digits = 3)
+matrixRes[i,]<-c(names(predictiveLeves)[i],entropyLevel,weightLevel)
+}
+matrixRes
+dfRes<-cbind.data.frame(Nivel=as.factor(matrixRes[,1]),Entropia=as.numeric(matrixRes[,2]),Peso=as.numeric(matrixRes[,3]))
+dfRes
+dt<-datos
+#testcode
+rutacode<-paste("C:/Users/",user,"/Google Drive/R-util-functions/diverse/ShannonEntropy/",sep = "")
+source(file=paste(rutacode,"entropyWeightOneVariable.R",sep = ""),encoding = "UTF8")
+listDataFrames<-list()
+for(i in 1:(ncol(dt)-1)){
+listDataFrames[[i]]<-entropyWeightOneVariable(dt[,i],dt[,ncol(dt)])
+}
+listDataFrames
+listdfWE<-listDataFrames
+#testcode
+remainderVector<-c()
+lista<-1
+for(lista in 1:length(listdfWE)){
+remainderVector<-c(remainderVector,remainderOneVariable(data.frame(listdfWE[[lista]])))
+}
+remainderVector
+ColumnIG<-datos$Dcabeza
+targetIG<-datos$Enfermedad
+rutacode<-paste("C:/Users/",user,"/Google Drive/R-util-functions/diverse/ShannonEntropy/",sep = "")
+source(file=paste(rutacode,"entropyWeightOneVariable.R",sep = ""),encoding = "UTF8")
+source(file=paste(rutacode,"remainderOneVariable.R",sep = ""),encoding = "UTF8")
+source(file=paste(rutacode,"oneVectorEntropy.R",sep = ""),encoding = "UTF8")
+dfWEIG<-entropyWeightOneVariable(ColumnIG,targetIG)
+remainderIG<-remainderOneVariable(dfWEIG)
+targetEntropy<-oneVectorEntropy(targetIG)
+IG<-targetEntropy-remainderIG
+IG
+ColumnIG<-datos$Pamarilla
+dfWEIG<-entropyWeightOneVariable(ColumnIG,targetIG)
+remainderIG<-remainderOneVariable(dfWEIG)
+targetEntropy<-oneVectorEntropy(targetIG)
+IG<-targetEntropy-remainderIG
+IG
+source(file=paste(rutacode,"informationGainOneVariable.R",sep = ""),encoding = "UTF8")
+dfIGMV<-datos
+dfInformationGain<-apply(dfIGMV[,1:(ncol(dfIGMV)-1)],2,informationGainOneVariable(dfIGMV[,ncol(dfIGMV)]))
+dfInformationGain<-apply(dfIGMV[,1:(ncol(dfIGMV)-1)],2,FUN=informationGainOneVariable,dfIGMV[,ncol(dfIGMV)])
+dfInformationGain
+dfInformationGain<-apply(dfIGMV[,1:(ncol(dfIGMV)-1)],1,FUN=informationGainOneVariable,dfIGMV[,ncol(dfIGMV)])
+dfInformationGain
+(ncol(dfIGMV)-1
+ncol(dfIGMV)
+ncol(dfIGMV)
+dfInformationGain<-apply(dfIGMV[,1:(ncol(dfIGMV)-1)],2,FUN=informationGainOneVariable)
+dfInformationGain
+vectorInformationGain<-c()
+for(i in 1:(ncol(dfIGMV)-1)){
+vectorInformationGain<-c(vectorInformationGain,informationGainOneVariable(dfIGMV[,i],dfIGMV[,ncol(dfIGMV)]))
+}
+vectorInformationGain
+source(file=paste(rutacode,"informationGainOneVariable.R",sep = ""),encoding = "UTF8")
+dfInformationGain<-apply(dfIGMV[,1:(ncol(dfIGMV)-1)],2,FUN=informationGainOneVariable,dfIGMV[,ncol(dfIGMV)])
+dfInformationGain
+str(dfInformationGain)
+t(dfInformationGain)
+data.frame(dfInformationGain)
+library(magrittr)
+prdf<-data.frame(dfInformationGain)%>%cbind.data.frame(variable=row.names(.),Ganancia=.[,1])
+prdf
+prdf<-cbind.data.frame(variable=row.names(dfInformationGain),Ganancia=dfInformationGain[,1])
+dfInformationGain
+prdf<-cbind.data.frame(variable=colum.names(dfInformationGain),Ganancia=dfInformationGain[1,])
+prdf<-cbind.data.frame(variable=col.names(dfInformationGain),Ganancia=dfInformationGain[1,])
+prdf<-cbind.data.frame(variable=colnames(dfInformationGain),Ganancia=dfInformationGain[1,])
+prdf<-data.frame(dfInformationGain)
+prdf
+cbind.data.frame(variable=row.names(prdf),Ganancia=prdf[,1])
+rutacode<-paste("C:/Users/",user,"/Google Drive/R-util-functions/diverse/ShannonEntropy/",sep = "")
+source(file=paste(rutacode,"informationGainMultiVariable.R",sep = ""),encoding = "UTF8")
+dfRes<-informationGainMultiVariable(datos)
+dfRes
+gest<-informationGainOneVariable(datos$Estornudos,datos$Enfermedad)
+gest
+gest<-informationGainOneVariable(datos$Fiebre,datos$Enfermedad)
+gest
+entEst<-oneVectorEntropy(datos$Estornudos)
+entEst
+entEst<-oneVectorEntropy(datos$Mgarganta)
+entEst
+gest<-informationGainOneVariable(datos$Mgarganta,datos$Enfermedad)
+gest
+source(file=paste(rutacode,"multiVectorEntropy.R",sep = ""),encoding = "UTF8")
+entEst<-oneVectorEntropy(datos$Erupciones)
+entEst
+gest<-informationGainOneVariable(datos$Erupciones,datos$Enfermedad)
+gest
+informationGainOneVariable(datos$Erupciones,datos$Enfermedad)
+print(informationGainOneVariable(datos$Erupciones,datos$Enfermedad))
+print(oneVectorEntropy(datos$Erupciones))
+for(i in 1:9)
+print(oneVectorEntropy(datos[,i]))
+dfRes<-informationGainMultiVariable(datos)
+print(dfRes<-informationGainMultiVariable(datos))
+datos<-read.csv(file="C:/Users/artur/Google Drive/DAIH/Paper komputer sapiens/ejemplo-enf.csv",header = T,sep = ",")
+for(i in 1:9)
+print(oneVectorEntropy(datos[,i]))
+print(dfRes<-informationGainMultiVariable(datos))
+datos<-read.csv(file="C:/Users/artur/Google Drive/DAIH/Paper komputer sapiens/ejemplo-enf.csv",header = T,sep = ",")
+for(i in 1:9)
+print(oneVectorEntropy(datos[,i]))
+print(dfRes<-informationGainMultiVariable(datos))
+rutacode<-paste("C:/Users/",user,"/Google Drive/R-util-functions/diverse/ShannonEntropy/",sep = "")
+source(file=paste(rutacode,"informationGainMultiVariable.R",sep = ""),encoding = "UTF8")
+source(file=paste(rutacode,"multiVectorEntropy.R",sep = ""),encoding = "UTF8")
+datos<-read.csv(file="C:/Users/artur/Google Drive/DAIH/Paper komputer sapiens/ejemplo-enf.csv",header = T,sep = ",")
+for(i in 1:9)
+print(oneVectorEntropy(datos[,i]))
+print(dfRes<-informationGainMultiVariable(datos))
+datos<-read.csv(file = paste("C:/Users/",user,"/Google Drive/R-util-functions/diverse/ShannonEntropy/ham-spam.csv",sep = ""),header = T,sep = ",")
+for(i in 1:ncol(datos)-1)
+print(oneVectorEntropy(datos[,i]))
+print(dfRes<-informationGainMultiVariable(datos))
+ncol(datos)
+for(i in 1:ncol(datos)-1)
+print(oneVectorEntropy(datos[,i]))
+for(i in 1:(ncol(datos)-1))
+print(oneVectorEntropy(datos[,i]))
+print(dfRes<-informationGainMultiVariable(datos))
+source(file=paste(rutacode,"remainderMultiVariable.R",sep = ""),encoding = "UTF8")
+source(file=paste(rutacode,"entropyWeightMultiVariable.R",sep = ""),encoding = "UTF8")
+print(remainderMultiVariable(entropyWeightMultiVariable(datos)))
+entropyWeightMultiVariable(datos)
+print(entropyWeightMultiVariable(datos))
+source(file=paste(rutacode,"informationGainMultiVariable.R",sep = ""),encoding = "UTF8")
+source(file=paste(rutacode,"multiVectorEntropy.R",sep = ""),encoding = "UTF8")
+source(file=paste(rutacode,"remainderMultiVariable.R",sep = ""),encoding = "UTF8")
+source(file=paste(rutacode,"entropyWeightMultiVariable.R",sep = ""),encoding = "UTF8")
+datos<-read.csv(file="C:/Users/artur/Google Drive/DAIH/Paper komputer sapiens/ejemplo-enf.csv",header = T,sep = ",")
+datos<-read.csv(file = paste("C:/Users/",user,"/Google Drive/R-util-functions/diverse/ShannonEntropy/ham-spam.csv",sep = ""),header = T,sep = ",")
+print(remainderMultiVariable(entropyWeightMultiVariable(datos)))
+print(entropyWeightMultiVariable(datos))
+for(i in 1:(ncol(datos)-1))
+print(oneVectorEntropy(datos[,i]))
+print(oneVectorEntropy(datos[,1]))
+print(oneVectorEntropy(datos[,4]))
+print(remainderMultiVariable(entropyWeightMultiVariable(datos)))
+print(informationGainMultiVariable(datos))
+datos<-read.csv(file = paste("C:/Users/",user,"/Google Drive/R-util-functions/diverse/ShannonEntropy/breast_cancer.csv",sep = ""),header = T,sep = ",")
+datos[which(datos=='?'),]
+datos[which(datos$v6=='?'),]
+datos[which(datos$v6=='?')]
+which(datos$v6=='?')
+datos[which(datos$v6=='?'),6]<-2
+which(datos$v6=='?')
+which(datos$v7=='?')
+which(datos$v8=='?')
+which(datos$v9=='?')
+which(datos$v1=='?')
+which(datos$v2=='?')
+which(datos$v3=='?')
+which(datos$v4=='?')
+which(datos$v5=='?')
+View(datos)
+print(informationGainMultiVariable(datos))
+print(remainderMultiVariable(entropyWeightMultiVariable(datos)))
+print(oneVectorEntropy(datos[,10]))
+print(oneVectorEntropy(datos[,1]))
+print(oneVectorEntropy(datos[,2]))
+print(oneVectorEntropy(datos[,3]))
+print(oneVectorEntropy(datos[,9]))
+print(remainderMultiVariable(entropyWeightMultiVariable(datos)))
+rutacode<-paste("C:/Users/",user,"/Google Drive/R-util-functions/diverse/ShannonEntropy/",sep = "")
+source(file=paste(rutacode,"informationGainMultiVariable.R",sep = ""),encoding = "UTF8")
+source(file=paste(rutacode,"multiVectorEntropy.R",sep = ""),encoding = "UTF8")
+rutacode<-paste("C:/Users/",user,"/Google Drive/R-util-functions/diverse/ShannonEntropy/",sep = "")
+user<-Sys.info()[7]
+user<-user[[1]]
+rutacode<-paste("C:/Users/",user,"/Google Drive/R-util-functions/diverse/ShannonEntropy/",sep = "")
+source(file=paste(rutacode,"informationGainMultiVariable.R",sep = ""),encoding = "UTF8")
+datos<-read.csv(file="C:/Users/artur/Google Drive/DAIH/Paper komputer sapiens/ejemplo-enf.csv",header = T,sep = ",")
+print(informationGainMultiVariable(datos))
+datos<-read.csv(file = paste("C:/Users/",user,"/Google Drive/R-util-functions/diverse/ShannonEntropy/spam-ham.csv",sep = ""),header = T,sep = ",")
+datos<-read.csv(file = paste("C:/Users/",user,"/Google Drive/R-util-functions/diverse/ShannonEntropy/ham-spam.csv",sep = ""),header = T,sep = ",")
+print(informationGainMultiVariable(datos))
+datos<-read.csv(file = paste("C:/Users/",user,"/Google Drive/R-util-functions/diverse/ShannonEntropy/breast_cancer.csv",sep = ""),header = T,sep = ",")
+print(informationGainMultiVariable(datos))
+source(file=paste(rutacode,"IGMV.R",sep = ""),encoding = "UTF8")
+datos<-read.csv(file="C:/Users/artur/Google Drive/DAIH/Paper komputer sapiens/ejemplo-enf.csv",header = T,sep = ",")
+print(IGMV(datos))
+user<-Sys.info()[7]
+user<-user[[1]]
+rutacode<-paste("C:/Users/",user,"/Google Drive/R-util-functions/diverse/ShannonEntropy/",sep = "")
+source(file=paste(rutacode,"IGMV.R",sep = ""),encoding = "UTF8")
+datos<-read.csv(file="C:/Users/artur/Google Drive/DAIH/Paper komputer sapiens/ejemplo-enf.csv",header = T,sep = ",")
+print(IGMV(datos))
